@@ -35,6 +35,46 @@
 					font-size: 1.5em;
 				}
 			}
+			/* white right box to draw in */
+			#rightBox {
+				background-color:white;
+				width: 380px;
+				height: 380px;
+				padding: 25px;
+				margin: 25px;
+				margin-left: 750px;
+			}
+
+			 /* Clear Pad and Finish Buttons */
+			 #myButtons { /* this is for the finish button background static */
+            	background:black;
+            	color: white;
+            	font-size: 20px;
+            	text-decoration: none;
+            	padding: 20px;
+            	margin-top: 360px;
+				margin-left: 57px;
+            	border-radius: 30px;
+				width: 110px;
+				height: 65px;
+        	}
+
+    		#myButtons:hover { /* this is for the active hovering actions of finish button*/
+            	background: rgb(255, 0, 0);
+            	font-size: 35px;
+        	}
+
+			/* score button */
+			#scoreButton {
+				background:rgb(22, 206, 190);
+            	color: black;
+            	font-size: 30px;
+            	margin-top: 0px;
+				margin-left: 280px;
+            	border-radius: 10px;
+				width: 100px;
+				height: 55px;
+			}
 
 			body {
 				background-color: aquamarine;
@@ -68,5 +108,12 @@
 	<script>
 		var atrament = atrament('canvas', window.innerWidth, window.innerHeight);
 	</script>
+		<div id = "rightBox">
+			<button id = "scoreButton" onclick="alert('Your score:')">8/10</button><br>
+			<!-- The Finish Button -->
+			<input id = "myButtons" type="submit" value="Clear" onclick="clearCanvas(canvas,ctx);">
+			<button id = "myButtons" type="button" onclick="alert('what\'s up!')">Finish</button>
+		</div>
+
 </body>
 </html>
