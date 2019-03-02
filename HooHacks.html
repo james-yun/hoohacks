@@ -6,16 +6,8 @@
 		
 		<title>atrament.js ~ demo</title>
 		<script src="./atrament.min.js"></script>
-		<style>
-			canvas {
-				width: 100vw;
-				height: 100vh;
-				position: fixed;
-				top: 0;
-				left: 0;
-				z-index: 2;
-			}
 
+		<style>
 			form {
 				z-index: 3;
 				position: fixed;
@@ -35,6 +27,13 @@
 					font-size: 1.5em;
 				}
 			}
+
+			body {
+				background-color: aquamarine;
+				/* background-image: url('http://www.publicdomainpictures.net/download-picture.php?adresar=50000&soubor=notebook-page.jpg'); */
+				font-family: sans-serif;
+				padding: 1em;
+			}
 			/* white right box to draw in */
 			#rightBox {
 				background-color:white;
@@ -43,6 +42,7 @@
 				padding: 25px;
 				margin: 25px;
 				margin-left: 750px;
+				
 			}
 
 			 /* Clear Pad and Finish Buttons */
@@ -61,7 +61,6 @@
 
     		#myButtons:hover { /* this is for the active hovering actions of finish button*/
             	background: rgb(255, 0, 0);
-            	font-size: 35px;
         	}
 
 			/* score button */
@@ -75,18 +74,25 @@
 				width: 100px;
 				height: 55px;
 			}
-
-			body {
-				background-color: aquamarine;
-				/* background-image: url('http://www.publicdomainpictures.net/download-picture.php?adresar=50000&soubor=notebook-page.jpg'); */
-				font-family: sans-serif;
-				padding: 1em;
+			
+			canvas {
+				width: 38vw;
+				height: 50vh;
+				top: 17vh;
+				left: 55vw;
+				z-index: 2;
+				position: fixed;
 			}
+			#gif {
+				float: left;
+			}
+
+
 		</style>
 	</head>
 	<body>
 		<h1>atrament.js</h1>
-		<form>
+		<!-- <form>
 			<button onclick="event.preventDefault(); atrament.clear();">clear</button><br>
 			<label>Thickness</label><br>
 			<input type="range" min="1" max="40" oninput="atrament.weight = parseFloat(event.target.value);" value="2" step="0.1" autocomplete="off"><br>
@@ -102,18 +108,21 @@
 			<input type="color" onchange="atrament.color = event.target.value;" value="#000000" autocomplete="off"><br>
 			<label>Opacity</label><br>
 			<input type="range" min="0" max="1" onchange="atrament.opacity = parseFloat(event.target.value);" value="1" step="0.05" autocomplete="off">
-		</form>
+			<button onclick="var dataURL = atrament.toImage();window.open(dataURL);">submit</button>
+		</form> -->
+		<img id="gif" src="./gifs/a.gif" alt="letter a">
 		<canvas width="1063" height="606" style="cursor: crosshair;"></canvas>
+		
 	
 	<script>
-		var atrament = atrament('canvas', window.innerWidth, window.innerHeight);
+		var atrament = atrament('canvas', window.innerWidth/2, window.innerHeight/2);
+		//we have to get the dataURL of the image
 	</script>
-		<div id = "rightBox">
-			<button id = "scoreButton" onclick="alert('Your score:')">8/10</button><br>
-			<!-- The Finish Button -->
-			<input id = "myButtons" type="submit" value="Clear" onclick="clearCanvas(canvas,ctx);">
-			<button id = "myButtons" type="button" onclick="alert('what\'s up!')">Finish</button>
-		</div>
-
+	<div id = "rightBox">
+		<button id = "scoreButton" onclick="alert('Your score:')">8/10</button><br>
+		<!-- The Finish Button -->
+		<input id = "myButtons" type="submit" value="Clear" onclick="event.preventDefault(); atrament.clear();">
+		<button id = "myButtons" type="button" onclick="var dataURL = atrament.toImage();window.open(dataURL);">Finish</button>
+	</div>
 </body>
 </html>
