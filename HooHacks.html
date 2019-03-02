@@ -12,49 +12,52 @@
   </style>
 
   </head>
-
       <body>
-      <h1>HooHacks</h1>
+	  <h1>HooHacks</h1>
+	  
+    <div id="map"></div>
+	<script>
+	var map;
+	
+	function initMap() {
+		// The map, centered at Los Angeles
+		map = new google.maps.Map(document.getElementById('map'), {
+		center: {lat: 38.0336, lng: -78.5080},
+		zoom: 15
+		});
+		
+		// The marker
+		var red =  {lat: 38.0336, lng: -78.5080};
+		var iconImage = 'https://maps.google.com/mapfiles/kml/shapes/';
+		var marker = new google.maps.Marker({position: red, icon : iconImage, map: map});
 
+		// Greatest line of code ever written
+		map.data.loadGeoJson('https://bikeshare.metro.net/stations/json/');
 
-      <div id="map"></div>
-									<script>
-									var map;
-									function initMap() {
-										
-										// The map, centered at Los Angeles
-										map = new google.maps.Map(document.getElementById('map'), {
-										center: {lat: 38.0336, lng: -78.5080},
-										zoom: 15
-										});
+		infoWindow = new google.maps.InfoWindow();
+		
+		map.data.addListener('click', function(event) {
+		
+		infoWindow.setContent(
+		"<p style=\"color:black; \">" + 
+		event.feature.getProperty("name") + "<br/>" +
+			"Station ID: " + event.feature.getProperty("kioskId") + "<br/>" + 
+			event.feature.getProperty("bikesAvailable") + " bikes available" + "<br/>" + 
+			event.feature.getProperty("docksAvailable") + " docks available")+ "</p>";
 
-										// Greatest line of code ever written
-										map.data.loadGeoJson('https://bikeshare.metro.net/stations/json/');
-
-										infoWindow = new google.maps.InfoWindow();
-										
-										map.data.addListener('click', function(event) {
-										
-										infoWindow.setContent(
-										"<p style=\"color:black; \">" + 
-										event.feature.getProperty("name") + "<br/>" +
-											"Station ID: " + event.feature.getProperty("kioskId") + "<br/>" + 
-											event.feature.getProperty("bikesAvailable") + " bikes available" + "<br/>" + 
-											event.feature.getProperty("docksAvailable") + " docks available")+ "</p>";
-
-										var anchor = new google.maps.MVCObject();
-												anchor.set("position",event.latLng);
-												infoWindow.open(map,anchor);
-										})
-									}
-									</script>
-									<!--Load the API from the specified URL
-									* The async attribute allows the browser to render the page while the API loads
-									* The key parameter will contain your own API key
-									* The callback parameter executes the initMap() function
-									-->
-									<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCO2-lPMAfFxogisjASCRvVzZqRcF7yGrk&callback=initMap"
-									></script>
+		var anchor = new google.maps.MVCObject();
+				anchor.set("position",event.latLng);
+				infoWindow.open(map,anchor);
+		})
+	}
+	</script>
+	<!--Load the API from the specified URL
+	* The async attribute allows the browser to render the page while the API loads
+	* The key parameter will contain your own API key
+	* The callback parameter executes the initMap() function
+	-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCO2-lPMAfFxogisjASCRvVzZqRcF7yGrk&callback=initMap"
+	></script>
 
 
 
