@@ -53,6 +53,49 @@
                 padding: 13px;
                 border-radius: 14px;
             }     
+
+        #slideout {
+        /* position: absolute; */
+        position: fixed;
+        top: 100px;
+        right: 0;
+        width: 35px;
+        -webkit-transition-duration: 0.3s;
+        -moz-transition-duration: 0.3s;
+        -o-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+    }
+
+    #slideout_tab {
+        position: relative;
+        top: 100px;
+        left: 0;
+        width: 200px;
+        padding: 12px 6px 12px 6px;
+        text-align: center;
+        background: #86B135;
+        color: #fff;
+        cursor:pointer;
+        -webkit-border-radius: 5px 0 0 5px;
+        -moz-border-radius: 5px 0 0 5px;
+        border-radius: 5px 0 0 5px;
+    }
+    
+    #slideout_inner {
+        position: absolute;
+        top: -50px;
+        left: 35px;
+        background: #86B135;
+        width: 220px;
+        padding: 15px;
+        height: 200px;
+        cursor:auto;
+        -webkit-border-radius: 5px 0 0 5px;
+        -moz-border-radius: 5px 0 0 5px;
+        border-radius: 5px 0 0 5px;
+    }
+    #showblock:checked + #slideout{right: 250px;}
+    #showblock{display:none;}
     
             #startButton:hover { /* this is for the active hovering actions of email link*/
                 background: rgb(105, 125, 231);
@@ -75,16 +118,24 @@
             }
 
         </style>
-    
-    
-    
-    <div>
 
+    <input type="checkbox" id="showblock">
+    <div id="slideout">
+    <label id="slideout_tab" for="showblock" title="Admin Slider">
+        <i class="fa fa-cogs fa-spin"> Click for Instructions</i>
+    </label>
+    <div id="slideout_inner">
+        Game Instructions: 
+        Copy the letter on the left into the box on the right.  Check your score with the finish button.
+    </div>
+    </div>
+    
+
+    <div>
         <br>
         <center>
             <h1>HooHacks 2019</h1>
         </center>
-
     <br>
 
         <center>
@@ -97,11 +148,12 @@
     <div>
     <!-- profile pic -->
         <center>
-             <img src="./frontpageicon.png">
+             <img src="frontpageicon.png">
         </center>
     </div>
 
     <br>
+
 
     <div>
         <center>
@@ -112,7 +164,7 @@
     </div>
 
     <br>
-    
+
     <!-- email link -->
     <div>
         <center>
