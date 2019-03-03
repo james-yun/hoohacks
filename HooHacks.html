@@ -40,7 +40,7 @@
 			/* white right box to draw in */
 			#rightBox {
 				background-color:white;
-				width: 380px;
+				width: 28%;
 				height: 380px;
 				padding: 25px;
 				margin: 25px;
@@ -180,25 +180,25 @@
 					document.getElementById('score').innerHTML = Math.round(score/count);
 
 
-					if (8 < Math.floor(Math.min(diff/200, 10))) {
+					if (7 < Math.floor(Math.min(diff/200, 10))) {
 						document.getElementById('stars').src = 'stars/5star.png';
-					} else if (6 < Math.floor(Math.min(diff/200, 10))) {
+					} else if (5 < Math.floor(Math.min(diff/200, 10))) {
 						document.getElementById('stars').src = 'stars/4star.png';
 					} else if (4 < Math.floor(Math.min(diff/200, 10))) {
 						document.getElementById('stars').src = 'stars/3star.png';
-					} else if (2 < Math.floor(Math.min(diff/200, 10))) {
+					} else if (3 < Math.floor(Math.min(diff/200, 10))) {
 						document.getElementById('stars').src = 'stars/2star.png';
 					} else {
 						document.getElementById('stars').src = 'stars/1star.png';
 					}
 
-					if (8 < score / count) {
+					if (7 < score / count) {
 						document.getElementById('finalStars').src = 'stars/5star.png';
-					} else if (6 < score / count) {
+					} else if (5 < score / count) {
 						document.getElementById('finalStars').src = 'stars/4star.png';
 					} else if (4 < score / count) {
 						document.getElementById('finalStars').src = 'stars/3star.png';
-					} else if (2 < score / count) {
+					} else if (3 < score / count) {
 						document.getElementById('finalStars').src = 'stars/2star.png';
 					} else {
 						document.getElementById('finalStars').src = 'stars/1star.png';
