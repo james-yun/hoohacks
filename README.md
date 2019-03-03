@@ -1,3 +1,5 @@
 # hoohacks
-Project idea goes here:
-Educational Game.
+Educational Game: Intuitively learn the Latin alphabet.
+
+Using:
+Machine Learning, Web Development, Google Cloud
