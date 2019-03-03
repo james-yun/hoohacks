@@ -27,8 +27,12 @@
 					font-size: 1.5em;
 				}
 			}
+			html, body {
+				height: 100%;
+			}
 
 			body {
+				
 
 				background-color: rgb(105, 125, 231);
 				background-image: url('landingpage.jpg');
@@ -40,25 +44,27 @@
 			/* white right box to draw in */
 			#rightBox {
 				background-color:white;
-				width: 28%;
-				height: 380px;
-				padding: 25px;
-				margin: 25px;
-				margin-left: 750px;
+				width: 26%;
+				
+				height: 26vw;
+				padding: 1.9%;
+				margin: 1.8%;
+				/* margin-left: 750px; */
+				margin-left: 55%;
+				position: relative;
 			}
 
 			 /* Clear Pad and Finish Buttons */
 			 #myButtons { /* this is for the finish button background static */
             	background:rgb(235, 150, 60);
             	color: white;
-            	font-size: 20px;
+            	font-size: 150%;
             	text-decoration: none;
-            	padding: 20px;
-            	margin-top: 360px;
-				margin-left: 57px;
-            	border-radius: 30px;
-				width: 110px;
-				height: 65px;
+            	margin-top: 45vh;
+				margin-left: 3.7vw;
+            	border-radius: 2vw;
+				width: 7.6vw;
+				height: 7.2vh;
         	}
 
     		#myButtons:hover { /* this is for the active hovering actions of finish button*/
@@ -66,12 +72,12 @@
         	}
 
 			#backButton {
-                font-size: 20px;
+                font-size: 120%;
                 font-family: Arial, Helvetica, sans-serif;
 				top: 0;
 				left: 0;
-                padding: 10px;
-                border-radius: 14px;
+                padding: 1%;
+                border-radius: 2vw;
                 background: rgb(235, 150, 60);
                 color: white;
             } 
@@ -84,12 +90,12 @@
 			#scoreButton {
 				background:rgb(235, 150, 60);
             	color: black;
-            	font-size: 30px;
+            	font-size: 180%;
             	margin-top: 0px;
-				margin-left: 280px;
-            	border-radius: 10px;
-				width: 100px;
-				height: 55px;
+				margin-left: 75%;
+            	border-radius: 1vw;
+				width: 28%;
+				height: 14%;
 			}
 			
 			canvas {
@@ -111,16 +117,16 @@
 			#score {
 				font-size: 0%;
 				/* font-size: 900%; */
+				float: left;
 			}
 			#stars {
-				position: fixed;
 				width: auto;
-  				height: 30px;
+  				height: 2.5vw;
+				position: fixed;
 			}
 			#finalStars {
+				height: 5vw;
 				width: auto;
-  				height: 70px;
-
 			}
 
 		</style>
@@ -152,7 +158,7 @@
 		<script>
 			var startTime = 0;
 			var endTime;
-			var diff;
+			var diff = 0;
 			var score = 0;
 			var count = 0;
 			function startTimer() {
@@ -235,6 +241,7 @@
 		<h1 id="score">0</h1>
 	</center>
 	<center>
+		<br></br>
 		<br></br>
 		<h1>Average score: </h1>
 		<img id="finalStars" src="">
