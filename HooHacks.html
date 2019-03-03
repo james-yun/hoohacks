@@ -4,7 +4,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		
-		<title>atrament.js ~ demo</title>
+		<title>The Alphabet Game - Play</title>
 		<script src="./atrament.min.js"></script>
 
 		<style>
@@ -50,7 +50,7 @@
 
 			 /* Clear Pad and Finish Buttons */
 			 #myButtons { /* this is for the finish button background static */
-            	background:black;
+            	background:rgb(235, 150, 60);
             	color: white;
             	font-size: 20px;
             	text-decoration: none;
@@ -63,7 +63,7 @@
         	}
 
     		#myButtons:hover { /* this is for the active hovering actions of finish button*/
-            	background: rgb(255, 0, 0);
+            	background: rgb(220, 60, 121);
         	}
 
 			/* score button */
@@ -93,10 +93,27 @@
   				height: auto;
 			}
 
+			#backButton {
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+				top: 0;
+				left: 0;
+                padding: 10px;
+                border-radius: 14px;
+                background: rgb(235, 150, 60);
+                color: white;
+            } 
+
+			#backButton:hover { /* this is for the active hovering actions of finish button*/
+            	background: rgb(220, 60, 121);
+        	}
+
 		</style>
 	</head>
 	<body>
-		<h1>atrament.js</h1>
+		<div>
+		<button id="backButton" onclick="location.href='./index.html';">Go Back</button>
+		</div>
 		<!-- <form>
 			<button onclick="event.preventDefault(); atrament.clear();">clear</button><br>
 			<label>Thickness</label><br>
