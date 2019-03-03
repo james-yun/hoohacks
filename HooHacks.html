@@ -109,7 +109,18 @@
 			}
 
 			#score {
-				font-size: 900%;
+				font-size: 0%;
+				/* font-size: 900%; */
+			}
+			#stars {
+				position: fixed;
+				width: auto;
+  				height: 30px;
+			}
+			#finalStars {
+				width: auto;
+  				height: 70px;
+
 			}
 
 		</style>
@@ -141,10 +152,12 @@
 		<script>
 			var startTime = 0;
 			var endTime;
-			var diff
+			var diff;
+			var score = 0;
+			var count = 0;
 			function startTimer() {
 				
-					startTime = new Date();
+				startTime = new Date();
 				
 				// alert(startTime);
 			}
@@ -158,9 +171,38 @@
 					letter = nextChar(letter)
 					var dataURL = atrament.toImage();
 					// window.open(dataURL);
-					document.getElementById('scoreButton').innerHTML = Math.floor(Math.min(diff/200, 10));
+					document.getElementById('scoreButton').innerHTML = Math.floor(Math.min(diff/200, 10)) + '/10';
 					document.getElementById('gif').src = './gifs/' + letter + '.gif';
-					event.preventDefault(); atrament.clear();
+					event.preventDefault(); 
+					atrament.clear();
+					count++;
+					score += Math.floor(Math.min(diff/200, 10));
+					document.getElementById('score').innerHTML = Math.round(score/count);
+
+
+					if (8 < diff/200) {
+						document.getElementById('stars').src = 'stars/5star.png';
+					} else if (6 < diff/200) {
+						document.getElementById('stars').src = 'stars/4star.png';
+					} else if (4 < diff/200) {
+						document.getElementById('stars').src = 'stars/3star.png';
+					} else if (2 < diff/200) {
+						document.getElementById('stars').src = 'stars/2star.png';
+					} else {
+						document.getElementById('stars').src = 'stars/1star.png';
+					}
+
+					if (8 < score / count) {
+						document.getElementById('finalStars').src = 'stars/5star.png';
+					} else if (6 < score / count) {
+						document.getElementById('finalStars').src = 'stars/4star.png';
+					} else if (4 < score / count) {
+						document.getElementById('finalStars').src = 'stars/3star.png';
+					} else if (2 < score / count) {
+						document.getElementById('finalStars').src = 'stars/2star.png';
+					} else {
+						document.getElementById('finalStars').src = 'stars/1star.png';
+					}
 				}
 		</script>
 
@@ -170,6 +212,8 @@
 		//we have to get the dataURL of the image
 	</script>
 	<div id = "rightBox">
+		<img id=stars src="stars/1star.png">
+
 		<button id = "scoreButton">Score</button><br>
 		<!-- The Finish Button -->
 		<input id = "myButtons" type="submit" value="Clear" onclick="event.preventDefault(); atrament.clear();">
@@ -188,8 +232,17 @@
 		nextChar('a');
 	</script>
 	<center>
-		<h1 id="score">30</h1>
+		<h1 id="score">0</h1>
 	</center>
+	<center>
+		<br></br>
+		<br></br>
+		<br></br>
+
+		<img id="finalStars" src="">
+	</center>
+		
+	
 	
 	
 </body>
