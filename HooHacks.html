@@ -65,6 +65,21 @@
             	background: rgb(220, 60, 121);
         	}
 
+			#backButton {
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+				top: 0;
+				left: 0;
+                padding: 10px;
+                border-radius: 14px;
+                background: rgb(235, 150, 60);
+                color: white;
+            } 
+			#backButton:hover { /* this is for the active hovering actions of finish button*/
+            	background: rgb(220, 60, 121);
+        	}
+
+
 			/* score button */
 			#scoreButton {
 				background:rgb(22, 206, 190);
@@ -86,32 +101,18 @@
 				position: fixed;
 			}
 			#gif {
+				margin-top: 1.7%;
 				margin-left: 15%;
 				float: left;
 				width: 31%;
   				height: auto;
 			}
 
-			#backButton {
-                font-size: 20px;
-                font-family: Arial, Helvetica, sans-serif;
-				top: 0;
-				left: 0;
-                padding: 10px;
-                border-radius: 14px;
-                background: rgb(235, 150, 60);
-                color: white;
-            } 
-
-			#backButton:hover { /* this is for the active hovering actions of finish button*/
-            	background: rgb(220, 60, 121);
-        	}
-
 		</style>
 	</head>
 	<body>
 		<div>
-		<button id="backButton" onclick="location.href='./index.html';">Go Back</button>
+			<button id="backButton" onclick="location.href='./index.html';">Go Back</button>
 		</div>
 		<!-- <form>
 			<button onclick="event.preventDefault(); atrament.clear();">clear</button><br>
