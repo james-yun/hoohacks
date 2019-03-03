@@ -82,7 +82,7 @@
 
 			/* score button */
 			#scoreButton {
-				background:rgb(22, 206, 190);
+				background:rgb(235, 150, 60);
             	color: black;
             	font-size: 30px;
             	margin-top: 0px;
@@ -141,10 +141,10 @@
 		//we have to get the dataURL of the image
 	</script>
 	<div id = "rightBox">
-		<button id = "scoreButton" onclick="alert('Your score:')">8/10</button><br>
+		<button id = "scoreButton">Score</button><br>
 		<!-- The Finish Button -->
 		<input id = "myButtons" type="submit" value="Clear" onclick="event.preventDefault(); atrament.clear();">
-		<button id = "myButtons" type="button" onclick="var dataURL = atrament.toImage();window.open(dataURL);">Finish</button>
+		<button id = "myButtons" type="button" onclick="var dataURL = atrament.toImage();window.open(dataURL);document.getElementById('scoreButton').innerHTML = '8/10';">Finish</button>
 	</div>
 </body>
 </html>
