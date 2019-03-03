@@ -1,4 +1,4 @@
-# hoohacks
+# HooHacks 2019
 Educational Game: Intuitively learn the Latin alphabet.
 
 Using:
