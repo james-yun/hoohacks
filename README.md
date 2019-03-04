@@ -1,10 +1,10 @@
-![alt text](https://raw.githubusercontent.com/james-yun/hoohacks/master/frontpageicon.png "Logo Title Text 1")
-
 # HooHacks 2019
 Educational Game: Intuitively learn the Latin alphabet.
 
 Using:
 Machine Learning, Web Development, Google Cloud
+
+![alt text](https://raw.githubusercontent.com/james-yun/hoohacks/master/frontpageicon.png "Front page icon")
 
 ## Inspiration
 
